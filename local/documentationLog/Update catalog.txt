@@ -1,0 +1,4 @@
+
+Version 1.7 
+
+1. Go to app\Http\Controllers\languageController.php then replace languageController.php

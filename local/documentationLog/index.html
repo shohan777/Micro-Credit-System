@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en-us"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Elegant Laravel CRUD - Login & User Management Documentation</title>
+        <meta name="description" content="dfgfdgfdg">
+        <meta name="author" content="Farazisoft">
+        <meta name="copyright" content="Farazisoft">
+        <meta name="generator" content="Elegant laravel Document">
+        <meta name="date" content="2015-04-04T00:00:00+02:00">
+		
+        <link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+        <link rel="stylesheet" href="assets/css/docs.min.css" media="all">
+		
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/jquery.scrollTo.js"></script>
+        <script src="assets/js/jquery.easing.js"></script>       
+        <script src="assets/js/script.js"></script>
+        <style>
+			body{background: #eeeeee;font-size: 17px;}
+            html{background-color:#EEEEEE;color:#383838;}
+            ::-moz-selection{background:#333636;color:#00DFFC;}
+            ::selection{background:#333636;color:#00DFFC;}
+            #documenter_sidebar #documenter_logo{background-image:url(logo.png);}
+            a{color:#008C9E;}
+            .btn {  border-radius:3px; }
+            .btn-primary {
+                background-image: -moz-linear-gradient(top, #008C9E, #006673);
+                background-image: -ms-linear-gradient(top, #008C9E, #006673);
+                background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+                background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+                background-image: -o-linear-gradient(top, #008C9E, #006673);
+                background-image: linear-gradient(top, #008C9E, #006673);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+                border-color: #006673 #006673 #bfbfbf;  color:#FFFFFF;
+            }
+            .btn-primary:hover,.btn-primary:active,.btn-primary.active,.btn-primary.disabled, .btn-primary[disabled] {
+                border-color: #008C9E #008C9E #bfbfbf;  background-color: #006673; }
+            hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+            #documenter_sidebar, #documenter_sidebar ul a{background-color:rgb(78, 79, 84);color:#FFFFFF;}
+            #documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #494F4F;-moz-text-shadow:1px 1px 0px #494F4F;text-shadow:1px 1px 0px #494F4F;}
+            #documenter_sidebar ul{border-top:1px solid #212424;}
+            #documenter_sidebar ul a{border-top:1px solid #494F4F;border-bottom:1px solid #212424;color:#FFFFFF;}
+            #documenter_sidebar ul a:hover{background:#22313F;color:#00DFFC;border-top:1px solid #333636;}
+            #documenter_sidebar ul a.current{background:#22313F;color:#00DFFC;border-top:1px solid #333636;}
+            #documenter_copyright{display:block !important;visibility:visible !important;}
+            .preview{ max-height:600px;  
+			-webkit-box-shadow:0 0px 15px 0 rgba(0,0,0,0.1);        
+			-moz-box-shadow:0 0px 15px 0 rgba(0,0,0,0.1);
+                box-shadow:0 0px 15px 0 rgba(0,0,0,0.1);
+                clear: both; margin: 20px 20px; }
+			 pre[class*=language-] { margin: 25px 0; background: hsla(0,0%,93%,.35); border: 1px dashed #dfdfdf; }
+			code { color:red;}
+			#documenter_sidebar ul {font-size: 15px;}
+        </style>
+
+    </head>
+    <body class="documenter-project-the-invoicer">
+        <div id="documenter_sidebar">
+            <br/>
+            <center>
+                <a href="#documenter_cover">
+                    <img src="assets/img/logo.png" width="90" ><br/>
+
+                </a>                
+            </center><br/>
+			<!------------ for Web admin -------------->
+			 <center style="color:rgba(255, 202, 0, 0.88); font-size:18px;">User Guide</center>	
+            <!-- Navigation Start-->
+            <ul id="documenter_nav">
+                <li><a class="current" href="#start">Start</a></li><!--  start data --->
+                <li><a href="#features" title="Features">Features</a></li>
+                <li><a href="#install" title="Install">Installation</a></li>
+                <li><a href="#upgradeGuide" title="Upgrade Guide">Upgrade Guide</a></li>
+                <li><a href="#login" title="intro">Initial Login Details</a></li>
+                <li><a href="#dashboard" title="dashboard">Dashboard</a></li>
+                <li><a href="#userdata" title="User data">Users Info</a></li>
+                <li><a href="#Language" title="Language">Languages</a></li>
+                <li><a href="#role_permission" title="Roles & Permissions">Roles & Permissions</a></li>
+				<li><a href="#mailbox" title="Message">Message</a></li>
+                <li><a href="#settings" title="Settings">Settings</a></li>                
+                <li><a href="#social" title="Settings">Social login</a></li>   
+                <li><a href="#creating_new_page" title="Creating_New_Page">Creating New Page</a></li>				
+				<li><a href="#customer_support" title="Customer_Support">Customer Support</a></li>
+				
+				
+            </ul>
+		
+            <!-- Navigation End-->
+            <div id="documenter_copyright">&COPY; Farazi soft <br>
+
+            </div>
+        </div>
+
+        <!-- Home Section Start-->
+        <div id="documenter_content">
+            
+            <section id="start">  <br/>          
+                <h2>Elegant Laravel CRUD - Login & User Management Documentation				
+				<a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-3d vc_btn3-color-green" target="_blank" href="https://codecanyon.net/item/elegant-laravel-crud/18559315?s_rank=27" title="">Download</a>				
+				</h2>
+				<div style="clear:both;"></div>
+                <hr>
+                   <table>
+                    <tr>
+                        <td>Support :</td>
+                        <td><a href="mailto:md.jewelmia52@gmail.com">info@farazisoft.com, md.jewelmia52@gmail.com </a></td>
+                    </tr>
+                    <tr>
+                        <td>Developed by :</td>
+                        <td><a href="http://farazisoft.com/">Farazi Soft</a></td>
+                    </tr>                    
+                </table> 
+				<hr>
+                <p>
+                    Thank you for your interest.<br />
+                    Please read carefully the complete documentation before starting.
+                </p>         
+            </section>
+
+            <!-- Home Section End -->
+
+
+            <!-- Features Section Start -->
+            <section id="features">
+                <div class="page-header"><h3>Key Features</h3><hr class="notop"></div>
+                <ul>
+				    <li><a> Build Laravel 5.5 </a></li>
+				    <li><a> Roles & Permissions </a> </li> 					
+				    <li><a> Multi Language Addition </a> </li> 					
+                    <li><a> Users Import, Export & PDF </a> </li>
+                    <li><a> Social Login (Facebook, Google, Twitter) </a> </li>
+                    <li><a> Advanced ACL. </li>					
+					<li><a> Messaging among Registered Users </a></li>	
+					<li><a> Beautiful Dashboard </a></li>						
+                </ul>     
+                          
+            </section>
+            <!-- Features Section End -->
+
+
+            <!-- Installation Section start -->
+            <section id="install">
+                <div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+				<h2>Server Requirements</h2>
+                <ul>			
+                    <li><a>  PHP >= 7.0.0 (including PHP 7)</a></li>
+					<li><a> OpenSSL PHP Extension </a></li>
+					<li><a> PDO PHP Extension </a></li>
+                    <li><a> Mbstring PHP Extension </a></li>
+					<li><a> Tokenizer PHP Extension </a></li>
+                    <li><a> XML PHP Extension </a></li>
+					<li><a> GD PHP Extension </a></li>
+					<li><a> Fileinfo PHP Extension </a></li>
+					<li><a> Xdebug Max Nesting Level (>= 500) </a></li>
+                </ul>
+				
+                <h2>Installation Process One</h2>
+                <ul> 
+                    <li><a> Please have the elegant_2.2 file and upload it to the hosting server, Once upload extract it to your desire places </a></li>
+                    <li><a> Create database and import elegant_2.2/public/db/database.sql </a></li>
+                    <li><a> Open extracted directory and look at the root that you have a file called <code>.env</code>, change value of "DB_DATABASE,DB_USERNAME,DB_PASSWORD" </a></li>       
+                    <li><a> That's it!  </a></li>
+                </ul>
+
+				<h2>Installation Process Two</h2>
+                <ul> 
+                    <li><a> Please have the elegant_2.2 file and upload it to the hosting server, Once upload extract it to your desire places </a></li>                    
+                    <li><a> Open extracted directory and look at the root that you have a file called <code>.env</code>, change value of "DB_DATABASE,DB_USERNAME,DB_PASSWORD" </a></li>       
+                    <li><a> After change your database, password & username then your terminal run: <code> composer dump-autoload </code></a></li>       
+                    <li><a> Last step your terminal run: <code> php artisan migrate:refresh --seed </code></a></li>       
+                    
+					<li><a> That's it!  </a></li>
+                </ul>
+				
+				<h2><span class="token string">Changing Application's Public Directory </span></h2>
+				 How remove public directory from url Video link: <a href="https://www.youtube.com/watch?v=efKk_DeeAdc"> https://www.youtube.com/watch?v=efKk_DeeAdc</a>
+					
+								              
+            </section>
+            <!-- Installation Section End -->
+
+            <!-- Initial Login Details Start -->
+
+            <section id="upgradeGuide">
+                <div class="page-header"><h3>Upgrade Guide</h3><hr class="notop"></div>               
+                <h4>To 2.0.1 from 2.0.0</h4>
+                <ul> 
+                    <li><a> Fix Migrations & Seeding </a></li>                    
+                    <li><a> Laravel Version Upgrader to 5.5 from 5.4</a></li>
+					<li><a> That's it!  </a></li>
+                </ul>
+				
+				
+            </section><!-- Initial Login Details Start -->
+
+            <section id="login">
+                <div class="page-header"><h3>Initial Login Details:</h3><hr class="notop"></div>
+                <br />
+                <table class="login_table">
+                    <tr>
+                        <th><p>Login Infomation</p></th>
+                    </tr>
+                    <tr>
+                        <td>                           
+                            <p><span style="font-size:18px;">Admin Login </span><br/><strong>Username : </strong> admin@farazisoft.com / <strong>Password</strong> : 123456</p>
+                            <p><span style="font-size:18px;">User Login </span><br/><strong>Username : </strong> user@farazisoft.com / <strong>Password</strong> : 123456</p>
+                            
+                        </td>
+                    </tr>
+                </table><br/>
+				<img width="90%" src="assets/img/login_screen.png" class="screenshot-image"> 
+				
+            </section>
+
+            <!-- Initial Login Details End -->
+
+            <!-- Admin Account Section Start -->
+            <section id="dashboard">
+                <div class="page-header"><h3>Admin Dashboard</h3><hr class="notop"></div>
+			 <!-- Administrator Dashboard  -->
+			 <p style="font-size:15px; width: 800px;"><strong>Administrator Dashboard : </strong>   Administrators are be able to see some system status on their dashboard page and 
+				    can see how many new users are registered in current month,
+				   number of total users, number of visitors current month and number of visitors today, these are:</p>
+                <img width="90%" src="assets/img/dashboard.png" class="screenshot-image">                
+				<br/></br/><br/>			
+				<p style="font-size:15px; width: 800px;"><strong>User Dashboard : </strong>  Users also have their dashboard where they can quickly navigate to some parts of the system
+				   And where they can see their activity graph for last Three weeks, these are:</p>               
+                <img width="90%" src="assets/img/user_dashboard.png" class="screenshot-image">
+               
+				
+            </section>
+            <!-- Admin Account Section Start -->
+			
+			<!-- User module start -->
+			<section id="userdata">
+                <div class="page-header"><h3>Users Info</h3><hr class="notop"></div>
+                <ul>
+                    <li><a> Add User </a></li>
+                    <li><a> Users list </a></li>            
+                    <li><a> Users Export,Import And PDF </a></li>            
+                    <li><a> Profile </a></li>            
+                    <li><a> Activity Log  </a></li>
+                </ul>
+			   <p style="font-size:15px; width: 800px;"><strong>User Registration Form Before Login : </strong> Users are able to access the registration form and create new account by click Register link, these are,</p>
+                <img width="90%" src="assets/img/registration_blogin.png" class="screenshot-image">
+				<br/><br/><br/>
+				<p style="font-size:15px; width: 800px;"><strong>Users List : </strong> Users list page represent list of all system users. Users are searchable by almost all attributes,Print,PDF,Import XLS/CSV users list, Export XLS user list, these are,</p>
+                <img width="90%" src="assets/img/user_list.png" class="screenshot-image">
+                <br/><br/><br/>
+				<p style="font-size:15px; width: 800px;"><strong>Profile : </strong> Every user of the system, no matter what his role is, is able to update his profile. Link to user's profile is available at the top left down corner and top, these are,</p>
+				<img width="90%"  src="assets/img/profile.png" class="screenshot-image">				 
+				 <br /><br /><br/>
+				 <p style="font-size:15px; width: 800px;"><strong>Users Login Activity : </strong> User activity is recorded for every system user. Every time when someone update his profile information system store that activity into database and so system administrators can see what their users are doing, these are,</p>
+				<img width="90%" src="assets/img/login_log.png" class="screenshot-image">
+               <br/><br/><br/>       
+            </section>
+            <!-- User module end -->
+			
+			<!-- User module start -->
+			<section id="Language">
+                <div class="page-header"><h3>Languages</h3><hr class="notop"></div>
+				 <ul>
+                    <li><a> Language add </a></li>
+                    <li><a> Languages list </a></li>            
+                    <li><a> Language Update </a></li>
+                </ul>
+				<p style="text-align: justify; width: 800px; font-size:15px;">
+                  This system an available is dynamically language Add what's your need, You can follow this <strong><a href="https://www.youtube.com/watch?v=FWMYrBCB-ow">Tutorial</a></strong>. When you use the language please see example {{ trans('app.indexname')}}. 
+                </p>
+				<p>
+				If your need Extend Languate <em>indexname</em>  All translation files are located inside resources/lang folder. Within this directory there should be a subdirectory for each language supported by the application then you can to you this folder and then 
+				</p>
+				<pre class=" language-php"><code class=" language-php"><span class="token operator">/</span>resources
+    <span class="token operator">/</span>lang
+        <span class="token operator">/</span>en
+            app<span class="token punctuation">.</span>php
+        <span class="token operator">/</span>bn
+            app<span class="token punctuation">.</span>php</code>
+			</pre>
+			
+               
+				<p style="font-size:15px; width: 800px;"><strong>Language Add : </strong> Admin can create new Language, Update and Delete, these are,</p>
+                <img width="90%" src="assets/img/language_add.png" class="screenshot-image">               
+				<br /><br /><br/>
+				<p style="font-size:15px; width: 800px;"><strong>Languages list : </strong> Admin can see Language list, these are,</p>
+                <img width="90%" src="assets/img/language_list.png" class="screenshot-image">
+                <br /><br /><br/>
+                 <p style="font-size:15px; width: 800px;"><strong>Language Update : </strong> Admin can update Language, He can change right column value, these are,</p>				
+				<img width="90%" src="assets/img/language_edit.png" class="screenshot-image">
+				 <br/>            
+            </section>
+            <!-- User module end -->
+			
+			<section id="role_permission">
+                <div class="page-header"><h3>Roles & Permission (ACL)</h3><hr class="notop"></div>
+                <ul>
+                    <li>Roles Added.</li>
+                    <li>Permission create.</li>
+                </ul>
+				
+				<p style="font-size:15px; width: 800px;">
+					Elegant comes with advanced roles and permissions (ACL) system based on <strong><a href="https://github.com/Zizaco/entrust">Entrust</a></strong> package.
+					A system is created to allow users to have only one role, and to allow different permissions for each role.
+					
+				</p>
+				
+				<h2>Available System Roles</h2>
+				<p>
+				   On roles section of the website administrators (or other users with appropriate permissions) can see and manage available system roles, as well as add unlimited number of new roles. Page with default system roles (Admin and User) is provided below.
+				</p>
+	
+				<p style="font-size:15px; width: 800px;"><strong>Roles : </strong> Form for adding new role, Delete and edit existing roles, is provided below:</p>
+                <img width="90%" src="assets/img/roles.png" class="screenshot-image">                
+				<br/><br/><br/>
+				<p style="font-size:15px; width: 800px;"><strong>Permission : </strong> It comes with some default permissions but, if some of them does not fit your needs, they can be easily modify them. Adding new permissions is a breeze too, these are,</p>
+                <img width="90%" src="assets/img/Permission.png" class="screenshot-image">
+               <br/><br/>
+            </section>
+            <!-- User module end -->			
+			
+			
+			<!-- Mailbox Section Start -->
+            <section id="mailbox">
+                <div class="page-header"><h3>Message</h3><hr class="notop"></div>
+                <p style="text-align: justify; width: 800px; font-size:15px;">
+                  Most of this information users can send among registered users via message, 
+				  but not every discussion needs to be seen by your entire team. That's provides a few different ways to have a conversation to direct messages and replay messages. User also can send multi messages at a time among registered user's.
+				  It has compose incipient Message from both inbox and sent.
+                </p>
+                <ul>
+                    <li><a> Inbox </a></li>
+                    <li><a> Compose </a></li>                                                            
+                    <li><a> Send </a></li>                                                                                
+                </ul>                
+                <br />
+				<p style="font-size:15px; width: 800px;"><strong>Compose message : </strong>Messaging among registered and replay system. Link to user's Message form is available at the Down right corner, click this icon like these are,</p>
+                <img width="90%" src="assets/img/composemessage.png" class="screenshot-image">				
+				  <br/><br/><br/>	
+				 <p style="font-size:15px; width: 800px;"><strong>Inbox message : </strong> Message send anyone to you, You can see inbox message and also get notification, these are,</p>
+				<img width="90%" src="assets/img/inbox_message.png" class="screenshot-image">				
+                <br /><br /><br />
+				<p style="font-size:15px; width: 800px;"><strong>Message details : </strong> You can see Details who send a message to you Or send you to anyone, these are,</p>			 
+				 <img width="90%" src="assets/img/message_details.png" class="screenshot-image">
+				 
+            </section>
+            <!-- Mailbox Section End -->
+			
+			
+            <!-- Settings Section Start -->
+            <section id="settings">
+                <div class="page-header"><h3>General Settings</h3><hr class="notop"></div>
+                <p style="text-align: justify; width: 800px; font-size:15px;">
+                    The Setting module is to setup rudimental business information you possess. You can change your company name, logo and contact details etc..
+                </p>
+				<p style="font-size:15px"><strong>General setting : </strong> General settings section is used for updating the application name, Logo, email, these are,</p>			 
+                <img width="90%" src="assets/img/general_settings.png" class="screenshot-image">
+            </section> 
+			
+			
+			<!-- Social Section Start -->
+            <section id="social">
+                <p><a name="configuration"></a></p>
+<h2>Configuration</h2>
+<p>This section contains some important configuration options that are specific to Elegant application. Since Elegant is using Laravel PHP framework, full configuration options for some framework specific stuff can be found inside <a href="https://laravel.com/docs/5.5/configuration">Laravel documentation</a>. </p>
+<p><a name="social-authentication"></a></p>
+<h3>Social Authentication</h3>
+<p>If you want to allow social authentication for your users, you will have to define which social providers you want to allow. List of social providers is declared inside <code>config/service.php</code> file.  Elegant supports <strong>Facebook</strong>, <strong>Twitter</strong> and <strong>Google+</strong> by default.</p>
+<p>The following code is an example of allowing all three default supported providers for Elegant application:</p>
+
+
+<pre class=" language-php"><code class=" language-php">
+	<span class="token string">'facebook'</span> <span class="token operator">=> </span><span class="token punctuation">[</span>
+		<span class="token string">'client_id'</span> <span class="token operator">=></span> <span class="token string">'your_application_id_from_facebook'</span><span class="token punctuation">,</span>
+		<span class="token string">'client_secret'</span> <span class="token operator">=></span> <span class="token string">'your_application_secret_from_facebook'</span><span class="token punctuation">,</span>
+		<span class="token string">'redirect'</span> <span class="token operator">=></span> <span class="token string">'http://YOUR_DOMAIN/auth/callback/facebook'</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'twitter'</span> <span class="token operator">=> </span><span class="token punctuation">[</span>
+		<span class="token string">'client_id'</span> <span class="token operator">=></span> <span class="token string">'your_application_id_from_twitter'</span><span class="token punctuation">,</span>
+		<span class="token string">'client_secret'</span> <span class="token operator">=></span> <span class="token string">'your_application_secret_from_facebook'</span><span class="token punctuation">,</span>
+		<span class="token string">'redirect'</span> <span class="token operator">=></span> <span class="token string">'http://YOUR_DOMAIN/auth/callback/twitter'</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	
+	<span class="token string">'google'</span> <span class="token operator">=> </span><span class="token punctuation">[</span>
+		<span class="token string">'client_id'</span> <span class="token operator">=></span> <span class="token string">'your_application_id_from_google'</span><span class="token punctuation">,</span>
+		<span class="token string">'client_secret'</span> <span class="token operator">=></span> <span class="token string">'your_application_secret_from_facebook'</span><span class="token punctuation">,</span>
+		<span class="token string">'redirect'</span> <span class="token operator">=></span> <span class="token string">'http://YOUR_DOMAIN/auth/callback/google'</span><span class="token punctuation">,</span>
+	<span class="token punctuation">]</span><span class="token punctuation">,</span>
+	
+	</code></pre>
+	
+				</section>
+            <!-- Desjign Section End --> 
+            
+			<!-- Create New Page  Start -->
+            <section id="creating_new_page">
+                <div class="page-header"><h3>Creating New Page</h3><hr class="notop"></div>
+                <ul>					
+					<li><a> Page Route </a></li>
+					<li><a> Creating The Controller </a> </li>
+					<li><a> Creating table in DB </a></li>
+					<li> <a>Page View </a></li>
+					<li><a> Sidebar Menu </a></li>
+					
+				</ul>
+				
+				<h2>Creating New Page</h2>
+				<p>Chances are high that you would like to create your own pages inside the Elegant application.
+				This section will explain in details everything you need to do to add your own page into the system.</p>
+				
+				<p>The page we are going to add will be simple page that will display the list of all employee.</p>
+				
+				<p><a name="page-route"></a></p>
+				
+				<h3>Page Route</h3>
+				
+				
+				<p>First thing we will have to do is to create new route for your page. We can do that by simply editing <code>/routes/web.php</code> file and adding the following code
+				anywhere inside the file. I've added it on top.</p>
+				
+				<pre class=" language-php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'employee'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"Employee will be displayed here."</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+ 
+ <span class="token function"> OR </span>
+ 
+<span class="token keyword">Route</span><span class="token function">::</span><span class="token string">get('/employee', 'EmployeeController@index')</span>;
+</code></pre>
+
+<p>To verify that this code is actually working, you should go to <code>yourwebsite.com/employee-list</code> and you should see following text on your screen: </p>
+
+
+
+<pre class=" language-html"><code class=" language-html">Employee list will be displayed here.</code></pre>
+
+<p>This means that your route is now working properly, so we can proceed and create new controller that will handle the actual request, instead of
+using this <a href="http://php.net/manual/en/class.closure.php">closure</a>, as we did in our example above.</p>
+
+
+<p>One more thing, as you can see, we assigned a name to this route. This is very handy feature since we can now reference our route by name, and in case that we want to change the url to something else in the future,
+will will be able to change it only inside our <code>routes/web.php</code> file, and everything will work without any broken links.</p>
+
+<blockquote>
+<p><strong>Note!</strong> You can find more about routes inside <a href="https://laravel.com/docs/5.5/routing">Laravel's documentation</a>.</p>
+</blockquote>
+<p><a name="controller"></a></p>
+
+<h3>Creating The Controller</h3>
+
+<p>Creating new controller in Laravel is pretty easy. If you are familiar with the terminal, you can navigate to Vanguard's root folder and type the following command </p>
+
+<blockquote>
+<p><strong>Note!</strong> You can find more about controller inside <a href="https://laravel.com/docs/5.5/routing">https://laravel.com/docs/5.5/controllers</a>.</p>
+</blockquote>
+
+
+<pre class=" language-cli"><code class=" language-cli">php artisan make:controller EmployeeController --resource</code></pre>
+
+<p>After you execute this command, new controller will be automatically created for you and placed inside <code>app/Http/Controllers</code> folder. The file will be named <code>EmployeeController.php</code>.
+You can also create the controller by manually creating new controller file inside <code>app/Http/Controllers</code> directory.</p>
+
+<p>Now lets define our constructor and create new <code>index</code> method inside that controller. Controller will now look like following</p>
+
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">EmployeeController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// Allow access to authenticated users only.</span>
+        <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token string">'auth'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// Allow access to users with 'users.manage' permission.</span>
+        <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token string">'permission:users.manage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+	<span class="token string">
+	/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+	 </span>   
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Hello from ActiveUsersController"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+   
+   <span class="token string">/**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */</span>
+	  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>
+
+   <span class="token string"> /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */<span>
+	 
+	  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token string">Request $request</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>
+   
+    <span class="token string">/**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">$id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>   
+
+    <span class="token string">/**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>
+	  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">edit</span><span class="token punctuation">(</span><span class="token string">$id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>
+	
+    <span class="token string">/**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token string">Request $request, $id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>    
+
+     <span class="token string">/**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>	 
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token string">$id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>	
+	
+<span class="token punctuation">}</span>
+	</code></pre>
+	
+
+
+<p>Since we now have the controller that will be responsible for our employee list, we are free to update the route we created in previous chapter to actually point to this <code>index</code> method
+we just created, instead of using closure:</p>
+
+<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">// /routes/web.php</span>
+
+<span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'employee-list'</span><span class="token punctuation">,</span> <span class="token string">'EmployeeController@index'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//...</span></code></pre>
+
+<p>You can probably see the pattern here. If we translate the route above into a sentence, it basically says something like this:</p>
+
+
+<blockquote>
+<p>When someone try to access <code>yourdomain.com/employee-list</code>, execute code that is located inside <code>index</code> method from <code>EmployeeController</code>.</p>
+</blockquote>
+
+
+<p>Now, if you access <code>yourdomain.com/employee-list</code> from your browser, you will see the following response</p>
+
+<pre class=" language-html"><code class=" language-html">Hello from EmployeeController</code></pre>
+
+<p>Of course, since we added those two checks inside controller's constructor, you will have to be logged in and you must have <code>employee.manage</code> permission to access this page.</p>
+
+<blockquote>
+<p><strong>Note!</strong> You can find more about controllers inside <a href="https://laravel.com/docs/5.5/controllers">Laravel's documentation</a>.</p>
+</blockquote>
+<p><a name="controller"></a></p>
+
+<!-------------- creating Model--------->
+<h3>Creating The Model</h3>
+
+<p>Creating new Model in Laravel is pretty easy. If you are familiar with the terminal, you can navigate to Vanguard's root folder and type the following command </p>
+
+
+<pre class=" language-cli"><code class=" language-cli">php artisan make:model Employee </code></pre>
+
+<p>After you execute this command, new model will be automatically created for you and placed inside <code>app</code> folder. The file will be named <code>Employee.php</code>.
+You can also create the model by manually creating new model file inside <code>app</code> directory.</p>
+
+<p>Now lets define our table <code>fields</code> inside that model. model will now look like following</p>
+
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Database<span class="token punctuation">\</span>Eloquent</span><span class="token punctuation">\</span>Model</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Employee<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
+<span class="token punctuation">{</span>
+	<span class="token string">
+	 /**
+     * The database table used by the model.
+     *
+     * @var string
+     */ </span> 	 
+  <span class="token keyword"> protected $table <span><span class="token string"> = 'employees'</span>;   
+<span class="token string"> /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */ </span>   
+  <span class="token keyword"> protected $fillable <span><span class="token string"> = ['first_name','last_name', 'email', 'password', 'username','phone',
+        'address', 'country', 'date_of_birth','gender','status'
+    ];
+	</span>
+<span class="token punctuation">}</span>
+	</code></pre>
+	
+
+<!---------------- for database ------------------->
+<p><a name="fetching-users"></a></p>
+<h3>Creating table in DB</h3>
+
+<p>Create table <code>employees</code> in database  and see <a href="https://laravel.com/docs/5.5/migrations">Migrations</a> makes it even easier.</p>
+
+<p>We will modify our controller to look like following:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">EmployeeController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// Allow access to authenticated users only.</span>
+        <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token string">'auth'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// Allow access to users with 'users.manage' permission.</span>
+        <span class="token this">$this</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token string">'permission:users.manage'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+	<span class="token string">
+	/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+	 </span>   
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+         <span class="token variable">$employeedata</span> = DB::table('emplyees')->get();
+        <span class="token keyword">return</span> view('employees.employee_list',compact('employeedata')); 
+	<span class="token punctuation">}</span>
+   
+   <span class="token string">/**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */</span>
+	  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>
+
+   <span class="token string"> /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */<span>
+	 
+	  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">store</span><span class="token punctuation">(</span><span class="token string">Request $request</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string"><span class="token variable">$input</span> = <span class="token variable">$request</span>->all();
+                <span class="token variable">  $validator </span> = Validator::make($request->all(), [
+					'email' => 'required|unique:users|max:255',
+					'username' => 'required|unique:users|min:6|max:255',
+					'password' => 'required|min:6|max:255',
+				]);
+			if (<span class="token variable">$validator</span>->fails()) {
+				<span class="token keyword">return</span> Redirect::back()->withErrors($validator)->withInput();      
+			}else{
+			Employee::create(<span class="token variable">$input</span>);
+				<span class="token keyword">return</span> Redirect::back()->with('msg_success', trans('app.insert_success_message'));
+			}	   
+	   </span>
+    <span class="token punctuation">}</span>
+   
+    <span class="token string">/**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token string">$id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">
+	    <span class="token string">//</span>
+	   </span>
+    <span class="token punctuation">}</span>   
+
+    <span class="token string">/**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>
+	  <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">edit</span><span class="token punctuation">(</span><span class="token string">$id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">
+	    <span class="token string">//</span>
+    <span class="token punctuation">}</span>
+	
+    <span class="token string">/**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token string">Request $request, $id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>    
+
+     <span class="token string">/**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */</span>	 
+	 <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">destroy</span><span class="token punctuation">(</span><span class="token string">$id</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+       <span class="token string">//</span>
+    <span class="token punctuation">}</span>	
+	
+<span class="token punctuation">}</span>
+
+
+</code></pre>
+
+
+<p>As you can see, our join query is really simple. At the and of the index method, we will render our <a href="https://laravel.com/docs/5.5/views">view</a>, which we are going to create now.</p>
+<p><a name="view"></a></p>
+<h3>Page View</h3>
+
+<p>In Laravel, all views are located inside <code>resources/views</code> folder. You can create unlimited number of sub-folders there, and group your views however you like it.
+One great thing is that you can use <strong>dot</strong> notation when you want to render that view. That means that instead of <code>/</code> you can use "." when you want to reference your view from a controller.</p>
+
+<p>In our controller code, we are referencing our view like <code>employee.employee-list</code> which means that we will create new file called <code>employee-list.blade.php</code> inside <code>resources/views/users</code> folder.
+As mentioned, you can put your view anywhere inside the <code>resources/views</code> folder, but for what we are building, it looks like <code>employee</code> folder is the best place to put it.</p>
+
+
+
+<p>Employee Registration form flow User Registration form:</p>
+
+<p>Here is the source code of our employee list:</p>
+
+<blockquote>
+<p><strong>Note!</strong> Laravel uses <strong>Blade</strong> templating language which has it's own tags and ways of building the templates. It is really simple, and you can learn more about it <a href="https://laravel.com/docs/5.5/blade">here</a>.</p>
+</blockquote>
+
+	
+<pre class=" language-php"><code class=" language-php">
+
+@<span class="token keyword">extends</span><span class="token punctuation">(</span>'layouts.template'<span class="token punctuation">)</span>
+@<span class="token function">section</span><span class="token punctuation">(</span>'content'<span class="token punctuation">)</span>
+@<span class="token keyword">foreach</span><span class="token punctuation">(</span>$employeedata as $view<span class="token punctuation">)</span>
+<table style="border:1px solid black">
+	<thead>
+	  <tr style="border:1px solid black">
+		  <th style="border:1px solid black">Name</th>
+		  <th style="border:1px solid black">Username</th>
+		  <th style="border:1px solid black">Email Address</th>	
+	  </tr>
+	</thead>
+	<tbody style="border:1px solid black">
+		<tr style="border:1px solid black">
+		  <td style="border:1px solid black"><span class="token punctuation">{</span><span class="token punctuation">{</span>$view->first_name<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token punctuation">{</span>$view->last_name<span class="token punctuation">}</span><span class="token punctuation">}</span></td>
+		  <td style="border:1px solid black"><span class="token punctuation">{</span><span class="token punctuation">{</span>$view->username<span class="token punctuation">}</span><span class="token punctuation">}</span></td>
+		  <td style="border:1px solid black"><span class="token punctuation">{</span><span class="token punctuation">{</span>$view->email<span class="token punctuation">}</span><span class="token punctuation">}</span></td>	 			  	
+		</tr>
+	</tbody>
+  </table>
+  @<span class="token keyword">endforeach</span>
+@stop
+
+
+</code></pre>
+<blockquote>
+<p><strong>Note!</strong> You can flow users list view file<strong>resources/users/user_list.blade.php</strong> .</p>
+</blockquote>
+
+<p>Let's explain what is happening here:</p>
+
+<p><code>@extends('layouts.template')</code> - means that this file is extending default layout called <strong>template</strong>, which is located inside <code>resources/views/layouts</code> folder.</p>
+
+<p><code>@section('page-title', 'Active Users')</code> - page title. Check <code>&lt;title&gt;&lt;/title&gt;</code> element inside app layout to see where it will be printed out.</p>
+
+<p><code>@section('content') ... @stop</code> - The actual content section. Everything that is inside those two tags (<code>@section('content')</code> and <code>@stop</code>) will be echoed out on the same place where <code>@yield('content')</code> is located inside app layout.
+Inside this section we are just looping through the passed array of users and printing them out. We are using <a href="http://getbootstrap.com/components/#media">bootstrap media object</a> just to make things a bit prettier. You can also click on user's avatar
+and it will take you to the user profile page.</p>
+
+<p><code>@section('styles') ... @stop</code> - Anything that is located inside this section will be automatically placed inside the header (check app layout and search for <code>@yield('styles')</code>) of the page.
+We are placing this css here just to make things easier and have everything in one file, but when you are building something, you will probably put the css inside <code>public/assets/css/app.css</code> file, since that's where Vanguard custom css is located.</p>
+
+<p>If we open the employee registration page now, it will look like following:</p>
+
+<p><a class="colorbox cboxElement" href="assets/img/employeeform.png"><img src="assets/img/employeeform.png" alt="Elegant New Page Example - Employee Users"></a></p>
+<p><a name="sidebar"></a></p>
+<p>If we open the employee list page now, it will look like following:</p>
+<p><a class="colorbox cboxElement" href="assets/img/employeelist.png"><img src="assets/img/employeelist.png" alt="Elegant New Page Example - Employee List"></a></p>
+<p><a name="sidebar"></a></p>
+<h3>Sidebar Menu</h3>
+<p>As you can see, we are able to access this page, but only by manually typing the url inside the browser's address bar. Lets add new link inside the sidebar menu that will point to our newly created page.</p>
+
+<p>All we have to do is to edit <code>resources/views/layouts/template.blade.php</code> view file and add our link wherever we want it to appear. Since this section is accessible only for users with <code>employee.manage</code> permission, it makes sense
+to put this new link right after "Users" link, between <code>@permission('employee.manage')</code> and it's <code>@endpermission</code> tag:</p>
+
+<pre class=" language-php"><code class=" language-php"><span class="token comment" spellcheck="true">//...</span>
+
+@<span class="token function">permission</span><span class="token punctuation">(</span><span class="token string">'employee.manage'</span><span class="token punctuation">)</span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ Request::is(<span class="token punctuation">'</span>employee*<span class="token punctuation">'</span>) ? <span class="token punctuation">'</span>active open<span class="token punctuation">'</span> : <span class="token punctuation">'</span><span class="token punctuation">'</span>  }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ route(<span class="token punctuation">'</span>employee.list<span class="token punctuation">'</span>) }}<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ Request::is(<span class="token punctuation">'</span>user*<span class="token punctuation">'</span>) ? <span class="token punctuation">'</span>active<span class="token punctuation">'</span> : <span class="token punctuation">'</span><span class="token punctuation">'</span>  }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+            <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-users fa-fw<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span></span> @<span class="token function">lang</span><span class="token punctuation">(</span><span class="token string">'app.employees'</span><span class="token punctuation">)</span>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span></span>
+
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ Request::is(<span class="token punctuation">'</span>employee_form<span class="token punctuation">'</span>) ? <span class="token punctuation">'</span>active open<span class="token punctuation">'</span> : <span class="token punctuation">'</span><span class="token punctuation">'</span>  }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ route(<span class="token punctuation">'</span>employee.registration<span class="token punctuation">'</span>) }}<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{{ Request::is(<span class="token punctuation">'</span>employee-registration<span class="token punctuation">'</span>) ? <span class="token punctuation">'</span>active<span class="token punctuation">'</span> : <span class="token punctuation">'</span><span class="token punctuation">'</span>  }}<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span>
+            <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>fa fa-users fa-fw<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></span><span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">&gt;</span></span></span> Employee Form
+        <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span></span>
+    <span class="token markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span></span>
+@endpermission
+</section>	
+		<section id="customer_support">
+		<div class="page-header"><h3>Customer Support</h3><hr class="notop"></div>
+		<p style="text-align: justify; width: 800px;"> Farazi Soft is always ready to serve its valued clients.
+			For any kind of after sales support or customization - Don't hesitate to contact us at: <br /><br />
+			E-Mail: <a href="mailto:md.jewelmia52@gmail.com">md.jewelmia52@gmail.com</a><br />
+			Skype: jewel_farazi
+		</p>
+	</section>
+</div>
+</body>
+</html>
+<style>
+3d.vc_btn3-size-lg:hover {
+    top: 3px;
+    box-shadow: 0 2px 0 #53812d;
+}
+.vc_btn3.vc_btn3-color-green.vc_btn3-style-3d.vc_btn3-size-lg {
+    box-shadow: 0 5px 0 #53812d;
+	text-decoration:none;
+	font-size:18px;
+}
+.vc_btn3.vc_btn3-color-green.vc_btn3-style-3d:focus, .vc_btn3.vc_btn3-color-green.vc_btn3-style-3d:hover {
+    color: #f7f7f7;
+    background-color: #6DAB3C;
+    top: 3px;
+    box-shadow: 0 2px 0 #53812d;
+}
+.vc_general.vc_btn3.vc_btn3-size-lg {
+float:right;
+}
+.vc_btn3.vc_btn3-color-green.vc_btn3-style-3d {
+    color: #fff;
+    background-color: #6DAB3C;
+    box-shadow: 0 5px 0 #53812d;
+}
+.vc_btn3.vc_btn3-color-green.vc_btn3-style-flat:focus, .vc_btn3.vc_btn3-color-green.vc_btn3-style-flat:hover, .vc_btn3.vc_btn3-color-green:focus, .vc_btn3.vc_btn3-color-green:hover {
+    color: #f7f7f7;
+    background-color: #5f9434;
+}
+.vc_general.vc_btn3:focus, .vc_general.vc_btn3:hover {
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: #4868cf;
+}
+.vc_general.vc_btn3, .blog .posts-navigation .nav-links a {
+    font-family: 'Montserrat',sans-serif;
+}
+.vc_btn3.vc_btn3-color-green, .vc_btn3.vc_btn3-color-green.vc_btn3-style-flat {
+    color: #fff;
+    background-color: #6DAB3C;
+}
+.vc_btn3.vc_btn3-size-lg {
+    font-size: 16px;
+    padding: 18px 25px;
+}
+.vc_btn3.vc_btn3-shape-rounded {
+    border-radius: 5px;
+}
+.vc_general.vc_btn3 {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    background-color: transparent;
+    color: #5472D2;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    top: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    line-height: normal;
+    font-size: 14px;
+    padding: 10px 15px;
+}
+
+</style>
